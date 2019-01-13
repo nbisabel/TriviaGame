@@ -10,9 +10,11 @@
     <title>Trivia Game</title>
 </head>
 
-<body>
+<body style="background-image:url(assets/images/snow-3097418_1280-e1533912757191.jpg)">
+    
     <h1 id="title">The Grinch Who Stole Christmas Trivia Quiz!!</h1>
     <div id="timer"></div>
+    <div class="container">
     <form name="quizForm" onsubmit="return submitAnswers()">
         <h2 class="question">1. Where did the Grinch live? </h2>
 
@@ -32,7 +34,7 @@
     </div>
     </td>
     <td>
-        <div>
+        <div class="container">
             <h2 class="question">2. What was the Grinch's pet?</h2>
 
             <ul>
@@ -53,7 +55,7 @@
     </tr>
     <tr>
         <td>
-            <div>
+            <div class="container">
                 <h2 class="question">3. Who was the girl that was kind to the grinch?</h2>
 
                 <ul>
@@ -72,7 +74,7 @@
             </div>
         </td>
         <td>
-            <div>
+            <div class="container">
                 <h2 class="question">4. What was the name of the Grinch's pet?</h2>
 
                 <ul>
@@ -102,7 +104,7 @@
     </div>
     <button id="submit">Submit</button>
 </form>
-
+</div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="assets/javascript/app.js"></script>
