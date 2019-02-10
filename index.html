@@ -1,117 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/style.css">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
 
     <title>Trivia Game</title>
-</head>
 
-<body style="background-image:url(assets/images/snow-3097418_1280-e1533912757191.jpg)">
-    
-    <h1 id="title">The Grinch Who Stole Christmas Trivia Quiz!!</h1>
-    <div id="timer"></div>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="/Users/Jaymar/SMU_HW/week5/TriviaGame/assets/css/style.css"> -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <link rel="icon" type="image/gif" href="./assets/images/IMG_3456.jpg"/>
+
+    <!-- Custom styles for this template -->
+<!--    <link href="jumbotron-narrow.css" rel="stylesheet">-->
+
+  </head>
+
+  <body>
+  
+    <audio controls loop id="themeSong">
+      <source src="./assets/images/star-wars-theme-song.mp3" type="audio/mp3"/>
+    </audio>
+   
     <div class="container">
-    <form name="quizForm" onsubmit="return submitAnswers()">
-        <h2 class="question">1. Where did the Grinch live? </h2>
-
-        <ul>
-            <input type="radio" name="q1" value="a" id="q1a">
-            <label id="correctString1">Mount Crumpit</label>
-            <br>
-            <input type="radio" name="q1" value="b" id="q1b">
-            <label>the United States</label>
-            <br>
-            <input type="radio" name="q1" value="c" id="q1c">
-            <label>Whoville</label>
-            <br>
-            <input type="radio" name="q1" value="d" id="q1d">
-            <label>Grinchland</label>
-        </ul>
-    </div>
-    </td>
-    <td>
+      <div class="header text-center clearfix">
+        <h1 class="text-muted">STAR WARS trivia game</h1>
+      </div>
+      <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h2 class="question">2. What was the Grinch's pet?</h2>
-
-            <ul>
-                <input type="radio" name="q2" value="a" id="q2a">
-                <label>a reindeer</label>
-                <br>
-                <input type="radio" name="q2" value="b" id="q2b">
-                <label id="correctString2">a dog</label>
-                <br>
-                <input type="radio" name="q2" value="c" id="q2c">
-                <label>a cat</label>
-                <br>
-                <input type="radio" name="q2" value="d" id="q2d">
-                <label>a bull</label>
-            </ul>
+        <div id="game">
+          <h2>Star Wars Trivia Game</h2>
+          <p id="remaining-time" class="lead">Remaining Time: <span id="timer"></span></p>
+          <p id="question" class="lead"></p>
         </div>
-    </td>
-    </tr>
-    <tr>
-        <td>
-            <div class="container">
-                <h2 class="question">3. Who was the girl that was kind to the grinch?</h2>
+        <div id="results">
+        </div>
+      </div>
 
-                <ul>
-                    <input type="radio" name="q3" value="a" id="q3a">
-                    <label>Cindy Lauper</label>
-                    <br>
-                    <input type="radio" name="q3" value="b" id="q3b">
-                    <label id="correctString3">Cindy Loo Who</label>
-                    <br>
-                    <input type="radio" name="q3" value="c" id="q3c">
-                    <label>Cindy Boo Who</label>
-                    <br>
-                    <input type="radio" name="q3" value="d" id="q3d">
-                    <label>Cindy Crawford</label>
-                </ul>
-            </div>
-        </td>
-        <td>
-            <div class="container">
-                <h2 class="question">4. What was the name of the Grinch's pet?</h2>
+      <div class="row">
+        <div id="choices" class="text-center">
+          <button id="start" class="btn btn-info btn-lg">Begin Younling!</button>
+          <div id="options">
+            
+          </div>
+          
+        </div>
+      </div>
 
-                <ul>
-                    <input type="radio" name="q4" value="a" id="q4a">
-                    <label>Ajax</label>
-                    <br>
-                    <input type="radio" name="q4" value="b" id="q4b">
-                    <label id="correctString4">Max</label>
-                    <br>
-                    <input type="radio" name="q4" value="c" id="q4c">
-                    <label>Walter</label>
-                    <br>
-                    <input type="radio" name="q4" value="d" id="q4d">
-                    <label>Brownie</label>
-                </ul>
-            </div>
-        </td>
-    </tr>
-    </table>
-    <br />
-    
-</div>
+    </div> 
+
+    <!-- jQuery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- TRIVIA APP JS -->
+    <script src="./assets/js/app.js"></script>  
 
 
-    <div>
-        <h2 class="quizScore" id="userScore"></h2>
-    </div>
-    <button id="submit">Submit</button>
-</form>
-</div>
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="assets/javascript/app.js"></script>
-<script>
-
-
-
-</script>
-
+  </body>
 </html>
