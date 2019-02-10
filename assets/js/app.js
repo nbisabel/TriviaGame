@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    //play music automatically
+    //try to play music automatically
     // event listeners
     $("#remaining-time").hide();
     $("#start").on('click', trivia.startGame);
@@ -17,7 +17,7 @@ $(document).ready(function(){
     timer: 20,
     timerOn: false,
     timerId : '',
-    // questions options and answers data
+    // preguntas to answer yo
     questions: {
       q1: 'What is Darth Vaders real name?',
       q2: 'What is the little green mans name?',
@@ -46,7 +46,7 @@ $(document).ready(function(){
       q7: 'BB8'
     },
     // trivia methods
-    // method to initialize game
+    // this is where the game starts
     startGame: function(){
     $("#themeSong").get(0).play();
 
